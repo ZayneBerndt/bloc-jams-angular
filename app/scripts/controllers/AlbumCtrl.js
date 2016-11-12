@@ -1,10 +1,10 @@
 function() {
-   function AlbumCtrl($scope) {
+   function AlbumCtrl(Fixtures) {
      // this.albumData = albumPicasso;
-     $scope.albumData = albumPicasso;
+     this.albumData = Fixtures.getAlbum();
    };
  
    angular
      .module('blocJams')
-     .controller('AlbumCtrl', AlbumCtrl);
+     .controller('AlbumCtrl', ['Fixtures', AlbumCtrl]);
  })();
