@@ -4,6 +4,30 @@
         
         var currentAlbum = Fixtures.getAlbum();
          
+         
+    
+    var stopSong = function(song) {
+        // currentBuzzObject.stop();
+ +        // SongPlayer.currentSong.playing = null;
+ +        stopSong(song);
+ +      } else {
+ +        var song = currentAlbum.songs[currentSongIndex];
+ +        setSong(song);
+ +        playSong(song);
+ +      }
+ +    };
+ +
+ +    // @function next
+ +    // @desc skip to next song
+ +
+ +    SongPlayer.next = function() {
+ +      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+ +      currentSongIndex++;
+ +      if (currentSongIndex === currentAlbum.songs.length) {
+ +        // currentBuzzObject.stop();
+ +        // SongPlayer.currentSong.playing = null;
+ +        stopSong(song);
+         
      var getSongIndex = function(song) {
      return currentAlbum.songs.indexOf(song);
  };
