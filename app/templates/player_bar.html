@@ -26,13 +26,13 @@
              <div class="seek-control">
                  <seek-bar value="{{ playerBar.songPlayer.currentTime }}" max="{{ playerBar.songPlayer.currentSong.length }}" on-change="playerBar.songPlayer.setCurrentTime(value)"></seek-bar>
                  </div>
-                 <div class="current-time"></div>
+                 <<div class="current-time">{{ playerBar.songPlayer.currentTime }}</div>
                  <div class="total-time">{{ album.songPlayer.currentSong.length }}</div>
              </div>
          </div>
          <div class="control-group volume">
              <span class="icon ion-volume-high"></span>
-             <seek_bar></seek_bar>
+             <seek-bar value="{{ playerBar.songPlayer.volume }}" max="100" on-change="playerBar.songPlayer.setVolume(value)"></seek-bar>
              </div>
          </div>
      </div>

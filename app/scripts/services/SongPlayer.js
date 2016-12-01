@@ -7,8 +7,6 @@
          
     
     var stopSong = function(song) {
-        // currentBuzzObject.stop();
-         // SongPlayer.currentSong.playing = null;
          stopSong(song);
        } else {
          var song = currentAlbum.songs[currentSongIndex];
@@ -44,12 +42,20 @@
  * @desc Stops currently playing song and loads new audio file as currentBuzzObject
  * @param {Object} song
  */
-         
+           SongPlayer.setVolume = function(volume) {
+       if (currentBuzzObject) {
+         currentBuzzObject.setVolume(volume);
+       }
+       SongPlayer.volume = volume;
+     };
+           
         var playSong = function(song) {
         currentBuzzObject.play();
         song.playing = true;
      };
          SongPlayer.currentTime = null;
+          
+           SongPlayer.volume = 50;
            
          SongPlayer.play = function(song) {
             song = song || SongPlayer.currentSong;
